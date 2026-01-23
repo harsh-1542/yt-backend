@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "Backend course with chai aur code - YT like webapp",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "dev": "nodemon  src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
 }
