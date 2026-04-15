@@ -164,9 +164,10 @@ const loginUser = asyncHandler( async (req,res)=>{
 
 const logoutUser = asyncHandler( async(req,res)=>{
       
-User.findByIdAndUpdate(req.user._id, 
+User.findByIdAndUpdate(
+    req.user._id, 
     {
-         $set: {refreshToken: undefined}
+         $unset: {refreshToken: 1}
     },
     {
         new: true
@@ -175,7 +176,6 @@ User.findByIdAndUpdate(req.user._id,
   const options = {
         httpOnly: true,
         secure: true,
-
     }
     return res.status(200)
     .clearCookie("accessToken", options)
